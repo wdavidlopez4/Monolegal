@@ -7,7 +7,7 @@ namespace Monolegal.Domain.Interfaces
 {
     public interface IDomain<T>
     {
-        public Task<bool> AddObjet(T objeto);
+        public Task<T> AddObjet(T objeto);
 
         public Task<T> GetObjet(string id);
 

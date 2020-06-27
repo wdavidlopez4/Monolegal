@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Monolegal.Infrastructure.DAL\Monolegal.Infrastructure.DAL.csproj" />
+  </ItemGroup>
+
 </Project>

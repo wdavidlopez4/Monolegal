@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
+using Monolegal.Infrastructure.DAL.Context;
+using Monolegal.Infrastructure.DAL.Repository;
 
 namespace Monolegal.Presentation
 {
@@ -24,6 +27,17 @@ namespace Monolegal.Presentation
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            // inyeccion a mongo db
+            services.Configure<MonolegalDatabaseSettings>(
+                Configuration.GetSection(nameof(MonolegalDatabaseSettings)));
+
+            services.AddSingleton<IMonolegalDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<MonolegalDatabaseSettings>>().Value);
+
+            //inyecccion a los dao de mongo db
+            //services.AddSingleton<Repository<>>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
