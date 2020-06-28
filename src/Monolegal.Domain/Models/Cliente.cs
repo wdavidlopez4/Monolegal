@@ -11,5 +11,7 @@ namespace Monolegal.Domain.Models
         public string Ciudad { get; set; }
 
         public int NIT { get; set; }
+
+        public List<Factura> Facturas;
     }
 }

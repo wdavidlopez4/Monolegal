@@ -23,5 +23,7 @@ namespace Monolegal.Domain.Models
         public bool Pagada { get; set; }
 
         public DateTime FechaDePago { get; set; }
+
+        public Cliente Cliente { get; set; }
     }
 }
