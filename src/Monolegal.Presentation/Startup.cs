@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Monolegal.Infrastructure.DAL.Context;
 using Monolegal.Infrastructure.DAL.Repository;
+using Monolegal.Infrastructure.IOC.InjectionDependency;
 
 namespace Monolegal.Presentation
 {
@@ -35,8 +36,8 @@ namespace Monolegal.Presentation
             services.AddSingleton<IMonolegalDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<MonolegalDatabaseSettings>>().Value);
 
-            //inyecccion a los dao de mongo db
-            //services.AddSingleton<Repository<>>();
+            //inyecccion mis servicios
+            RegistarServicios(services);
 
         }
 
@@ -66,6 +67,12 @@ namespace Monolegal.Presentation
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+
+        //registrar mis servicios
+        private static void RegistarServicios(IServiceCollection services)
+        {
+            DependencyContainer.InyectarEntidadesARepositorio(services);
         }
     }
 }

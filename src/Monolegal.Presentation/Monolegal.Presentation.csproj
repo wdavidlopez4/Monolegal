@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Monolegal.Infrastructure.DAL\Monolegal.Infrastructure.DAL.csproj" />
+    <ProjectReference Include="..\Monolegal.Infrastructure.IOC\Monolegal.Infrastructure.IOC.csproj" />
   </ItemGroup>
 
 </Project>
