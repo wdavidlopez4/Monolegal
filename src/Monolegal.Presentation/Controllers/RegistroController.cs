@@ -12,18 +12,18 @@ namespace Monolegal.Presentation.Controllers
 {
     public class RegistroController : Controller
     {
-        private readonly IServicioNotificaciones servicioNotificaciones;
+        private readonly IServicioRegistrar servicioRegistro;
 
-        public RegistroController(IServicioNotificaciones servicioNotificaciones)
+        public RegistroController(IServicioRegistrar servicioRegistro)
         {
-            this.servicioNotificaciones = servicioNotificaciones;
+            this.servicioRegistro = servicioRegistro;
         }
 
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            RegistroVM registro = await servicioNotificaciones.GetRegistros();
+            RegistroVM registro = await servicioRegistro.GetRegistros();
             return View(registro);
         }
 
@@ -36,7 +36,7 @@ namespace Monolegal.Presentation.Controllers
         [HttpPost]
         public async Task<IActionResult> CrearRegistro([Bind("factura")] RegistroVM registroVM)
         {
-            var obj =  await servicioNotificaciones.CrearRegistro(registroVM);
+            var obj =  await servicioRegistro.CrearRegistro(registroVM);
 
             if(obj != null)
             {

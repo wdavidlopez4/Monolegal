@@ -29,7 +29,7 @@ namespace Monolegal.Infrastructure.DAL.Repository
 
         public async Task<IEnumerable<T>> GetAllObjet()
         {
-            return await mongoCollection.Find(obj => true).ToListAsync();
+            return await mongoCollection.Find<T>(x => true).ToListAsync();
         }
 
         public Task<T> GetObjet(string id)

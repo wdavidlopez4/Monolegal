@@ -6,15 +6,10 @@ using System.Threading.Tasks;
 
 namespace Monolegal.Application.Core.Interfaces
 {
-    public interface IServicioNotificaciones
+    public interface IServicioRegistrar
     {
         public Task<RegistroVM> GetRegistros();
 
         public Task<RegistroVM> CrearRegistro(RegistroVM registroVM);
-
-        public void EnviarCorreoDesactivacion();
-
-        public void EnviarNotificaciones();
-
     }
 }

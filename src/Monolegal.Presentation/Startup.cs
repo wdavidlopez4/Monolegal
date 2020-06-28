@@ -77,6 +77,8 @@ namespace Monolegal.Presentation
             DependencyContainer.InyectarAApplicationCore(services);
 
             DependencyContainer.InyectarADal(services);
+
+            DependencyContainer.InyectarADAllaApiWeb(services);
         }
     }
 }

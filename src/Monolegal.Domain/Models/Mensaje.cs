@@ -6,22 +6,14 @@ using System.Text;
 
 namespace Monolegal.Domain.Models
 {
-    public class Cliente
+    public class Mensaje
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
 
-        public string Nombre { get; set; }
+        public string Notificacion { get; set; }
 
-        public string Ciudad { get; set; }
-
-        public int NIT { get; set; }
-
-        public long Celular { get; set; }
-
-        public List<Factura> Facturas;
-
-        public List<Mensaje> mensajes;
+        public Cliente Cliente { get; set; }
     }
 }
