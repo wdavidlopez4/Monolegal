@@ -10,6 +10,8 @@ namespace Monolegal.Application.Core.Interfaces
     {
         public Task<RegistroVM> GetRegistros();
 
+        public Task<RegistroVM> CrearRegistro(RegistroVM registroVM);
+
         public void EnviarCorreoDesactivacion();
 
         public void EnviarNotificaciones();

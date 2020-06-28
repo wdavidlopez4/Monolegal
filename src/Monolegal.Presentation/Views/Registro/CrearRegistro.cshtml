@@ -1,0 +1,96 @@
+﻿@model Monolegal.Application.Core.ViewModels.RegistroVM
+
+@{
+    ViewData["Title"] = "Crear registro";
+}
+
+    <div class="form-row">
+        <div class="col-md-12">
+            <form method="post" asp-controller="Registro" asp-action="CrearRegistro" class="form-group" enctype="multipart/form-data">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="factura.Cliente.Nombre" class="control-label"></label>
+                    <input asp-for="factura.Cliente.Nombre" type="text" class="form-control" />
+                    <span asp-validation-for="factura.Cliente.Nombre" class="text-danger"></span>
+                </div>
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="factura.Cliente.Ciudad" class="control-label"></label>
+                    <input asp-for="factura.Cliente.Ciudad" type="text" class="form-control" />
+                    <span asp-validation-for="factura.Cliente.Ciudad" class="text-danger"></span>
+                </div>
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="factura.Cliente.NIT" class="control-label"></label>
+                    <input asp-for="factura.Cliente.NIT" type="text" class="form-control" />
+                    <span asp-validation-for="factura.Cliente.NIT" class="text-danger"></span>
+                </div>
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="factura.TotalFactura" class="control-label"></label>
+                    <input asp-for="factura.TotalFactura" type="text" class="form-control" />
+                    <span asp-validation-for="factura.TotalFactura" class="text-danger"></span>
+                </div>
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="factura.SubTotal" class="control-label"></label>
+                    <input asp-for="factura.SubTotal" type="text" class="form-control" />
+                    <span asp-validation-for="factura.SubTotal" class="text-danger"></span>
+                </div>
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="factura.IVA" class="control-label"></label>
+                    <input asp-for="factura.IVA" type="text" class="form-control" />
+                    <span asp-validation-for="factura.IVA" class="text-danger"></span>
+                </div>
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="factura.Retencion" class="control-label"></label>
+                    <input asp-for="factura.Retencion" type="text" class="form-control" />
+                    <span asp-validation-for="factura.Retencion" class="text-danger"></span>
+                </div>
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="factura.FechaDeCreacion" class="control-label"></label>
+                    <input asp-for="factura.FechaDeCreacion" type="text" class="form-control" />
+                    <span asp-validation-for="factura.FechaDeCreacion" class="text-danger"></span>
+                </div>
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="factura.Estado" class="control-label"></label>
+                    <input asp-for="factura.Estado" type="text" class="form-control" />
+                    <span asp-validation-for="factura.Estado" class="text-danger"></span>
+                </div>
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="factura.Pagada" class="control-label"></label>
+                    <input asp-for="factura.Pagada" type="text" class="form-control" />
+                    <span asp-validation-for="factura.Pagada" class="text-danger"></span>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <!--enviar formulario-->
+                        <div class="col-sm">
+                            <input type="submit" value="Guardar" class="btn btn-outline-dark" />
+                        </div>
+                        <!--regresar a la lista de mensajes-->
+                        <div class="col-sm">
+                            <a asp-action="Index" class="btn btn-outline-dark">Volver a lista</a>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>

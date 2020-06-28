@@ -73,6 +73,10 @@ namespace Monolegal.Presentation
         private static void RegistarServicios(IServiceCollection services)
         {
             DependencyContainer.InyectarEntidadesARepositorio(services);
+
+            DependencyContainer.InyectarAApplicationCore(services);
+
+            DependencyContainer.InyectarADal(services);
         }
     }
 }

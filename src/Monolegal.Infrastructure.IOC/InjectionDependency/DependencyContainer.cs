@@ -1,4 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Monolegal.Application.Core.Interfaces;
+using Monolegal.Application.Core.services;
+using Monolegal.Domain.Interfaces;
 using Monolegal.Domain.Models;
 using Monolegal.Infrastructure.DAL.Context;
 using Monolegal.Infrastructure.DAL.Repository;
@@ -17,9 +20,15 @@ namespace Monolegal.Infrastructure.IOC.InjectionDependency
             services.AddSingleton<Repository<Cliente>>();
         }
 
-        public static void InyectarAjustes(IServiceCollection services)
+        public static void InyectarAApplicationCore(IServiceCollection services)
         {
-            
+            services.AddScoped<IServicioNotificaciones, ServicioNotificaciones>();
+        }
+
+        public static void InyectarADal(IServiceCollection services)
+        {
+            services.AddScoped<IDomain<Factura>, Repository<Factura>>();
+            services.AddScoped<IDomain<Cliente>, Repository<Cliente>>();
         }
 
     }

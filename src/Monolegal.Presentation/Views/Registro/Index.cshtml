@@ -1,0 +1,42 @@
+﻿@model Monolegal.Application.Core.ViewModels.RegistroVM
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Codigo Factura</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Ciudad</th>
+            <th scope="col">NIT</th>
+            <th scope="col">Total Factura</th>
+            <th scope="col">Sub total</th>
+            <th scope="col">IVA</th>
+            <th scope="col">Retencion</th>
+            <th scope="col">Fecha Creacion</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Pagada</th>
+            <th scope="col">Fecha Pago</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var registro in Model.Facturas)
+        {
+            var contador = 1;
+            <tr>
+                <th scope="row">@contador++ </th>
+                <td>@registro.Id</td>
+                <td>@registro.Cliente.Nombre</td>
+                <td>@registro.Cliente.Ciudad</td>
+                <td>@registro.Cliente.NIT</td>
+                <td>@registro.TotalFactura</td>
+                <td>@registro.SubTotal</td>
+                <td>@registro.IVA</td>
+                <td>@registro.Retencion</td>
+                <td>@registro.FechaDeCreacion</td>
+                <td>@registro.Estado</td>
+                <td>@registro.Pagada</td>
+                <td>@registro.FechaDePago</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Monolegal.Application.Core\Monolegal.Application.Core.csproj" />
     <ProjectReference Include="..\Monolegal.Infrastructure.DAL\Monolegal.Infrastructure.DAL.csproj" />
   </ItemGroup>
 

@@ -7,6 +7,8 @@ namespace Monolegal.Application.Core.ViewModels
 {
     public class RegistroVM
     {
-        public IEnumerable<Cliente> Clientes;
+        public IEnumerable<Factura> Facturas { get; set; }
+
+        public Factura factura { get; set; }
     }
 }
