@@ -1,0 +1,5 @@
+patron de arquitectura seleccionada: clean arquitecture
+Angular: falta
+docArquitectura: starUML
+ 
+ 
